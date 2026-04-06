@@ -1,4 +1,4 @@
-## Kronten28's Community Chess Tournament
+## My Community Chess Tournament
 
 **Game in progress.** This is open to **anyone** to play the next move!
 
