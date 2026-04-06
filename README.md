@@ -1,6 +1,6 @@
 ## Kronten28's Community Chess Tournament
 
-**Game in progress.** This is open to **anyone** to play the next move. That's the point!
+**Game in progress.** This is open to **anyone** to play the next move!
 
 > **Game #1** | **White's turn** | **Move 0** | **0 total moves** across all games
 
@@ -28,17 +28,17 @@ Share this game: [Post on X (Twitter)](https://x.com/intent/tweet?text=I%27m%20p
 <details>
 <summary><strong>How does this work?</strong></summary>
 
-When you click a move link, it opens a GitHub Issue with a pre-filled title. Just click **"Submit new issue"** — that's it! A [GitHub Action](https://github.blog/2020-07-03-github-action-hero-casey-lee/#getting-started-with-github-actions) will process your move, update the board SVG, and refresh this README automatically.
+When you click a move link, it opens a GitHub Issue with a pre-filled title. Just click **"Submit new issue"**, that's it! A [GitHub Action](https://github.blog/2020-07-03-github-action-hero-casey-lee/#getting-started-with-github-actions) will process your move, update the board SVG, and refresh this README automatically.
 
-Notice a problem? [Raise an issue](https://github.com/Kronten28/Kronten28/issues) and tag `@Kronten28`.
+[Raise an issue](https://github.com/Kronten28/Kronten28/issues) if you notice a problem and tag `@Kronten28`!
 </details>
 
 ---
 
 #### Last 5 moves
 
-*No moves yet — be the first!*
+*No moves yet, be the first!*
 
 #### Top 20 players
 
-*No moves yet — make a move to claim the top spot!*
+*No moves yet, make a move to claim the top spot!*
