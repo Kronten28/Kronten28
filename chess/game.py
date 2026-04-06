@@ -285,7 +285,7 @@ def generate_readme(board, stats, last_move=None):
     else:
         # Available moves
         turn_color = "White" if board.turn == chess.WHITE else "Black"
-        readme.append(f"### **{turn_color}'s move** — click a link to make your move!")
+        readme.append(f"### **{turn_color}'s move**, click a link to make your move!")
         readme.append("")
 
         grouped_moves = get_grouped_moves(board)
@@ -318,7 +318,7 @@ def generate_readme(board, stats, last_move=None):
     readme.append("<summary><strong>How does this work?</strong></summary>")
     readme.append("")
     readme.append("When you click a move link, it opens a GitHub Issue with a pre-filled title. "
-                   "Just click **\"Submit new issue\"** — that's it! A [GitHub Action]"
+                   "Just click **\"Submit new issue\"**, that's it! A [GitHub Action]"
                    "(https://github.blog/2020-07-03-github-action-hero-casey-lee/#getting-started-with-github-actions) "
                    "will process your move, update the board SVG, and refresh this README automatically.")
     readme.append("")
@@ -340,7 +340,7 @@ def generate_readme(board, stats, last_move=None):
             user = move_info["user"]
             readme.append(f"| {move_num} | {san} | [@{user}](https://github.com/{user}) |")
     else:
-        readme.append("*No moves yet — be the first!*")
+        readme.append("*No moves yet, be the first!*")
     readme.append("")
 
     # Leaderboard
@@ -354,7 +354,7 @@ def generate_readme(board, stats, last_move=None):
             medal = {1: "\U0001f947", 2: "\U0001f948", 3: "\U0001f949"}.get(rank, f"{rank}")
             readme.append(f"| {medal} | [@{user}](https://github.com/{user}) | {count} |")
     else:
-        readme.append("*No moves yet — make a move to claim the top spot!*")
+        readme.append("*No moves yet, make a move to claim the top spot!*")
     readme.append("")
 
     with open(README_FILE, "w", encoding="utf-8") as f:
@@ -438,7 +438,7 @@ def github_close_issue():
 
 
 def main():
-    """Main entry point — called by GitHub Action."""
+    """Main entry point, called by GitHub Action."""
     # Parse issue title: chess|command|move|gamenum
     parts = ISSUE_TITLE.split("|")
 
