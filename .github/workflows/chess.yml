@@ -1,0 +1,51 @@
+name: "Chess"
+
+on:
+  issues:
+    types: [opened]
+
+# Prevent parallel executions — queue moves to avoid race conditions
+concurrency:
+  group: chess-game
+  cancel-in-progress: false
+
+jobs:
+  move:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.issue.title, 'chess|')
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r chess/requirements.txt
+
+      - name: Process chess move
+        env:
+          REPOSITORY: ${{ github.repository }}
+          EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
+          EVENT_USER_LOGIN: ${{ github.event.issue.user.login }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python chess/game.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add .
+          git diff --staged --quiet && exit 0
+          MOVE_INFO=$(echo "${{ github.event.issue.title }}" | cut -d'|' -f3)
+          git commit -m "${{ github.event.issue.user.login }} played ${MOVE_INFO:-new game}"
+          git push
