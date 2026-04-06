@@ -8,7 +8,7 @@
   <img src="chess_board.svg" alt="Chess Board" width="480" />
 </p>
 
-### **White's move** — click a link to make your move!
+### **White's move**, click a link to make your move!
 
 | Piece | From | Available Moves |
 | :---: | :---: | --- |
